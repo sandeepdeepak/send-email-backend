@@ -3,8 +3,8 @@ const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
   service: "yahoo",
   auth: {
-    user: "sandymass002@yahoo.com",
-    pass: "ykdusdbihaldyvxp"
+    user: "sandymass003@yahoo.com",
+    pass: "nmxcxptvnnmdenah"
   }
 });
 let sendVerificationEmail = users => {
@@ -12,7 +12,7 @@ let sendVerificationEmail = users => {
   users.forEach(user => {
     transporter
       .sendMail({
-        from: "sandymass002@yahoo.com", // sender address
+        from: "sandymass003@yahoo.com", // sender address
         to: user.Email, // list of receivers
         subject: "User Data Verification",
         text: `Hey ${user.Firstname},
