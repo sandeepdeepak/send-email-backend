@@ -32,11 +32,9 @@ app.post("/upload", upload.single("upload"), cors(), (req, res) => {
   const csv = require("csvtojson");
   csv()
     .fromFile(csvFilePath)
-    .then(jsonObj => {
-      console.log(jsonObj);
-      jsonObj.forEach(user => {
-        sendUserDetailsEmail(user);
-      });
+    .then(users => {
+      console.log(users);
+      sendVerificationEmail(users);
     });
   res.send();
 });
