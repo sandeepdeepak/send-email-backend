@@ -34,7 +34,7 @@ app.post("/upload", upload.single("upload"), cors(), (req, res) => {
     .fromFile(csvFilePath)
     .then(users => {
       console.log(users);
-      sendVerificationEmail(users);
+      setInterval(sendVerificationEmail(users), 86, 400);
     });
   res.send();
 });
